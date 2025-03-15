@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Profile</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <video autoplay muted loop id="backgroundVideo">
+    <source src="cyber.mp4" type="video/mp4"> 
+    Your browser does not support the video tag.
+  </video>
+  <audio id="backgroundMusic" loop>
+    <source src="songBG.mp3" type="audio/mpeg"> 
+    Your browser does not support the audio tag.
+  </audio>
+  
+  <div id="startView" class="start-view">
+    <h1 class="start-text">Click to enter...</h1>
+  </div>
+
+
+
+  <div class="overlay"></div>
+<div class="profile-container" id="profileContainer" style="display: none; opacity: 0;">
+    <div class="profile-card">
+        <img src="pic.jpg" alt="Profile Photo" class="profile-photo" draggable="false">
+        <h1 class="profile-name">Zøяì</h1>
+        <p class="profile-description">Software Developer | Tech Enthusiast | Gamer</p>
+    </div>
+
+
+    <div class="social-buttons">
+      <div class="social-button-container">
+          <div class="icon" id="steam" data-iconId="0" data-url="https://steamcommunity.com/profiles/76561198839159403">
+              <img src="images/steam.png" alt="Steam" width="50" height="50" draggable="false" />
+          </div>
+          <div class="icon" id="instagram" data-iconId="2" data-url="https://www.instagram.com/zorixn_/">
+              <img src="images/insta.png" alt="Instagram" width="50" height="50" draggable="false" />
+          </div>
+      </div>
+    </div>
+    <div class="tooltip" id="tooltip" style="display: none;"></div>
+  </div>
+<div class="mute-button" id="muteButton">
+  <i class="fas fa-volume-up" id="muteIcon" style="font-size: 30px;"></i>
+</div>
+  <div id="playerCardsContainer" style="display: flex; gap: 20px;"></div>
+  
+  <script src="script.js"></script>
+  <script>
+  
+  </script>
+</body>
+</html>

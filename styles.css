@@ -1,0 +1,235 @@
+body {
+  overflow: hidden; 
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; 
+}
+
+#backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  z-index: -1;
+}
+
+.overlay {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.85); 
+  backdrop-filter: blur(5px);
+  pointer-events: none; 
+  opacity: 1;
+  transition: opacity 0.5s ease, backdrop-filter 0.5s ease;
+}
+
+.overlay.hide {
+  opacity: 0;
+  backdrop-filter: blur(0);
+  pointer-events: none;
+}
+.start-text {
+  color: white; 
+  font-size: 24px; 
+  text-align: center; 
+  animation: glow 1.5s infinite alternate; 
+}
+
+@keyframes glow {
+  0% {
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6), 0 0 15px rgb(172, 0, 149), 0 0 20px rgb(172, 0, 149);
+  }
+  100% {
+      text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgb(2, 124, 94), 0 0 40px rgb(2, 124, 94);
+  }
+}
+.start-view {
+  position: relative;
+  z-index: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  cursor: pointer; 
+}
+
+.profile-container {
+  position: relative;
+  text-align: center;
+  transition: transform 0.5s ease;
+  transform: translateY(0); 
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  z-index: 1; 
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.profile-card {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  background-color: rgba(216, 146, 207, 40%);
+  border: 2px solid #910272; 
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 300px;
+  margin: 20px 0;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.05);
+}
+.profile-card:hover {
+  box-shadow: 0 0 20px #9b0079a8,
+              0 0 30px #9600758e, 
+              0 0 40px #4e003d;
+}
+@keyframes glowi {
+  0% {
+      text-shadow: 0 0 10px #f3d6ed, 
+                   0 0 20px #c79dbf, 
+                   0 0 30px #a8739e;
+  }
+  25% {
+      text-shadow: 0 0 5px #9b0079a8, 
+                   0 0 10px #9600758e, 
+                   0 0 15px #4e003d;
+  }
+  50% {
+      text-shadow: 0 0 0 #641656, 
+                   0 0 0 #641656, 
+                   0 0 0 #641656;
+  }
+  75% {
+      text-shadow: 0 0 5px #4e003d, 
+                   0 0 10px #9600758e, 
+                   0 0 15px #9b0079a8;
+  }
+  100% {
+      text-shadow: 0 0 10px #a8739e, 
+                   0 0 20px #c79dbf, 
+                   0 0 30px #f3d6ed;
+  }
+}
+
+.profile-name {
+  color: #9b0079a8;
+  font-size: 24px;
+  text-align: center;
+  animation: glowi 4s infinite;
+}
+
+.profile-description {
+  color: #9b0079a8;
+  font-size: 16px;
+  text-align: center;
+}
+.profile-photo {
+  -webkit-user-drag: none;
+  -moz-user-drag: none;
+  -ms-user-drag: none;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.profile-photo:hover {
+  box-shadow: 0 0 20px #9b0079a8,
+              0 0 30px #9600758e, 
+              0 0 40px #4e003d;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.social-button-container {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(216, 146, 207, 40%);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.icon:hover {
+  transform: rotate(360deg) scale(0.8);
+  box-shadow: 0 0 20px #9b0079a8,
+              0 0 30px #9600758e, 
+              0 0 40px #4e003d;
+}
+
+
+.icon {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 
+               0 0 10px rgba(255, 255, 255, 0.3), 
+               0 0 15px rgba(255, 255, 255, 0.1);
+}
+.icon img {
+  width: 70%;
+  height: auto;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 10;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.visitor-counter {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 18px;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+.mute-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 100;
+}
